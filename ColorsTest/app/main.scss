@@ -1,0 +1,38 @@
+$dark-blue: #2d496d;
+$light-blue: #ecf9ff;
+
+$gray: #ddd;
+$light-gray: #eee;
+$gray-hover: #f5f5f5;
+
+@import "./people/people";
+
+.menu-bar {
+    background-color: $dark-blue;
+    height: 50px;
+    padding: 0 10px;
+    display: flex;
+
+    &-title {
+        cursor: pointer;
+        line-height: 50px;
+        flex-grow: 1;
+        font-size: 22px;
+        color: #fff;
+    }
+
+    &-item {
+        cursor: pointer;
+        font-size: 30px;
+        color: #fff;
+        padding: 5px;
+
+        &:hover {
+            color: $gray
+        }
+    }
+}
+
+.app-container {
+    margin-top: 10px;
+}

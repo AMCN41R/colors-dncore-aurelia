@@ -1,0 +1,32 @@
+<template>
+
+    <div class="people-list">
+
+        <h1>People</h1>
+
+        <table class="table table-hover">
+            <thead>
+                <th>Name</th>
+                <th class="align-center">Is Authorised</th>
+                <th class="align-center">Is Enabled</th>
+                <th class="align-center">Is Palindrome</th>
+                <th>Colors</th>
+            </thead>
+            <tbody>
+                <tr repeat.for="person of people" click.delegate="goToPerson(person.id)">
+                    <td>
+                        <a route-href="route:edit-person;params.bind:{id:person.id}">
+                            ${person.fullName}
+                        </a>
+                    </td>
+                    <td class="align-center">${person.isAuthorised | toYesNo}</td>
+                    <td class="align-center">${person.isEnabled | toYesNo}</td>
+                    <td class="align-center">${person.isPalindrome | toYesNo}</td>
+                    <td>${formatColours(person)}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</template>

@@ -1,0 +1,20 @@
+<template>
+
+    <div class="menu-bar">
+        <div class="menu-bar-title" click.delegate="goToPeople()">
+            Favourite Colors
+        </div>
+        <div class="menu-bar-item" click.delegate="goToPeople()">
+            <i class="fa fa-user-circle-o fa-fw"></i>
+        </div>
+        <!-- <div class="menu-bar-item" click.delegate="goToPeople()">
+            <i class="fa fa-paint-brush fa-fw"></i>
+        </div> -->
+    </div>
+
+    <div class="container app-container">
+
+        <router-view></router-view>
+
+    </div>
+</template>

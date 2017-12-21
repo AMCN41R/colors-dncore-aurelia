@@ -1,0 +1,6 @@
+
+GET http://localhost:5000/api/values
+
+###
+
+GET http://localhost:5000/api/people/11

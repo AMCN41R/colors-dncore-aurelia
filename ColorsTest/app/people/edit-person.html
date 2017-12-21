@@ -1,0 +1,68 @@
+<template>
+
+    <div class="edit-person">
+
+        <div if.bind="error">
+            ${error}
+        </div>
+
+        <template if.bind="!error">
+
+            <div class="panel">
+
+                <div class="edit-person-header">
+                    Update ${person.fullName}
+                </div>
+
+                <div class="edit-item" click.delegate="setAuthorised(!person.isAuthorised)">
+                    <span class="edit-item-name">Is Authorised</span>
+                    <div class="edit-item-check pull-right">
+                        <i show.bind="person.isAuthorised" class="fa fa-check-square-o fa-fw"></i>
+                        <i show.bind="!person.isAuthorised" class="fa fa-square-o fa-fw"></i>
+                    </div>
+                </div>
+
+                <div class="edit-item" click.delegate="setEnabled(!person.isEnabled)">
+                    <span class="edit-item-name">Is Enabled</span>
+                    <div class="edit-item-check pull-right">
+                        <i show.bind="person.isEnabled" class="fa fa-check-square-o fa-fw"></i>
+                        <i show.bind="!person.isEnabled" class="fa fa-square-o fa-fw"></i>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="edit-person-colors">
+                        Colors
+                    </div>
+
+                    <template repeat.for="color of colors">
+                        <div class="edit-item" click.delegate="setColor(color)">
+                            <span class="edit-item-name">${color.name}</span>
+                            <div class="edit-item-check pull-right">
+                                <i show.bind="color.selected" class="fa fa-check-square-o fa-fw"></i>
+                                <i show.bind="!color.selected" class="fa fa-square-o fa-fw"></i>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+
+
+                <div class="panel-footer">
+                    <button class="btn btn-primary" click.delegate="save()">
+                        <i class="fa fa-save"></i>
+                        Save
+                    </button>
+                    <button class="btn btn-default" click.delegate="cancel()">
+                        Cancel
+                    </button>
+                </div>
+
+            </div>
+
+        </template>
+
+    </div>
+
+</template>
