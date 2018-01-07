@@ -7,19 +7,34 @@ namespace ColorsTest.Controllers
     [Route("api/colors")]
     public class ColorsController : Controller
     {
-        public ColorsController(IColorRepository colors)
+        public ColorsController(IColorService colors)
         {
             this.Colors = colors;
         }
 
-        public IColorRepository Colors { get; }
+        private IColorService Colors { get; }
 
         [HttpGet]
         public async Task<IActionResult> GetColors()
         {
-            var colors = await this.Colors.Get();
+            var colors = await this.Colors.GetColors();
 
             return this.Ok(colors);
+        }
+
+        [HttpPost("{name}")]
+        public async Task<IActionResult> AddColor(string name)
+        {
+            var canAdd = await this.Colors.CanAdd(name);
+
+            if(!canAdd)
+            {
+                return this.BadRequest($"Cannot add duplicate color: {name}");
+            }
+
+            await this.Colors.AddColor(name);
+
+            return this.Ok();
         }
     }
 }

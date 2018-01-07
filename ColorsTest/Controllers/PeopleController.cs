@@ -16,7 +16,7 @@ namespace ColorsTest.Controllers
             this.People = People;
         }
 
-        public IPersonRepository People { get; }
+        private IPersonRepository People { get; }
 
         [HttpGet]
         public async Task<IActionResult> GetPeople()

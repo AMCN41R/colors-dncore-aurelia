@@ -9,6 +9,12 @@ export class ColorApi {
         var response = await this.httpClient.fetch("api/colors");
         return await response.json();
     }
+
+    async addColor(name: string): Promise<void> {
+        await this.httpClient.fetch(`api/colors/${name}`, {
+            method: "POST"
+        })
+    }
 }
 
 export interface IColor {

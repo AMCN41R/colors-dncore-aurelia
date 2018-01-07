@@ -36,3 +36,13 @@ INNER JOIN
     FavouriteColours fc ON c.ColourId = fc.ColourId
 WHERE 
     fc.PersonId = 11
+
+
+SELECT DISTINCT
+    c.*
+FROM
+    Colours c
+LEFT JOIN
+    FavouriteColours fc ON fc.ColourId = c.ColourId
+WHERE
+    fc.ColourId IS NOT NULL

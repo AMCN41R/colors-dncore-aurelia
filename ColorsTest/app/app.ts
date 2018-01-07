@@ -13,4 +13,8 @@ export class App {
     private goToPeople() {
         this.appRouter.goToPeople();
     }
+
+    private goToColors() {
+        this.appRouter.goToColors();
+    }
 }

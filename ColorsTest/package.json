@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "aurelia-bootstrapper": "^2.1.1",
+    "aurelia-dialog": "^1.0.0-rc.2.0.0",
     "aurelia-fetch-client": "^1.2.0",
     "aurelia-framework": "^1.1.5",
     "aurelia-router": "^1.4.0",

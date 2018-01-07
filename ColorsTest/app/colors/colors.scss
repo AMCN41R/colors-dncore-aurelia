@@ -1,0 +1,44 @@
+
+.ns-colors {
+
+    .colors-header {
+        font-size: 28px;
+        padding: 10px;
+        background-color: $light-blue;
+        color: $dark-blue;
+
+        &-title {
+            flex-grow: 1;
+        }
+
+        &-add {
+            cursor: pointer;
+
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+
+    .color-item {
+        padding: 10px 15px;
+        font-size: 18px;
+
+        &:hover {
+            background-color: $gray-hover;
+        }
+
+        &-name {
+            flex-basis: 200px;
+        }
+
+        .action-icon {
+            cursor: pointer;
+            margin-left: 5px;
+
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+}

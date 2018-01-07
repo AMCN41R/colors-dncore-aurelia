@@ -1,0 +1,31 @@
+<template>
+    <ux-dialog class="ns-add-color-modal">
+
+        <ux-header>
+            <div class="modal-header">
+                Add New Color
+            </div>
+        </ux-header>
+
+        <ux-body>
+            <div class="modal-body">
+                <label for="name">Name:</label>
+                <input 
+                    attach-focus="true" 
+                    enter-press.call="add()"
+                    class="form-control" 
+                    type="text" 
+                    id="name" 
+                    value.bind="name">
+            </div>
+        </ux-body>
+
+        <ux-footer>
+            <div class="modal-footer">
+                <button class="btn btn-primary" click.delegate="add()" disabled.bind="!canAdd">Add</button>
+                <button class="btn btn-default" click.delegate="cancel()">Cancel</button>
+            </div>
+        </ux-footer>
+
+    </ux-dialog>
+</template>

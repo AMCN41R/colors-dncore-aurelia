@@ -10,8 +10,9 @@ export class AppRouter {
 
         config.map([
             { route: "/", redirect: "/people" },
-            { route: "/people", name: "people", moduleId: PLATFORM.moduleName("./people/list") },
-            { route: "/people/:id", name: "edit-person", moduleId: PLATFORM.moduleName("./people/edit-person") },
+            { route: "/people", name: "people", moduleId: PLATFORM.moduleName("./people/list/list") },
+            { route: "/people/:id", name: "edit-person", moduleId: PLATFORM.moduleName("./people/edit/edit-person") },
+            { route: "/colors", name: "colors", moduleId: PLATFORM.moduleName("./colors/colors-admin") }
         ]);
     }
 
@@ -21,5 +22,9 @@ export class AppRouter {
 
     goToPerson(id: number) {
         this.router.navigateToRoute("edit-person", { id: id });
+    }
+
+    goToColors() {
+        this.router.navigateToRoute("colors");
     }
 }

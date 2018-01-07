@@ -1,0 +1,42 @@
+
+.ns-edit-person {
+
+    .panel-footer {
+        margin-top: 20px;
+    }
+
+    .edit-person-header {
+        font-size: 28px;
+        padding: 10px;
+        background-color: $light-blue;
+        color: $dark-blue;
+    }
+
+    .edit-person-colors {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 22px;
+        border-top: 1px solid $gray;
+        border-bottom: 1px solid $gray;
+        background-color: $light-blue;
+        color: $dark-blue;
+    }
+
+    .edit-item {
+        cursor: pointer;
+        padding: 10px 15px;
+        font-size: 18px;
+
+        &:hover {
+            background-color: $gray-hover;
+        }
+
+        &-name {
+            flex-basis: 200px;
+        }
+
+        &-check {
+            cursor: pointer;
+        }
+    }
+}

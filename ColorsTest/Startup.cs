@@ -32,6 +32,7 @@ namespace ColorsTest
 
             services.AddTransient<IPersonRepository, PersonRepository>();
             services.AddTransient<IColorRepository, ColorRepository>();
+            services.AddTransient<IColorService, ColorService>();
 
             services.AddMvc();
         }

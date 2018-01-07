@@ -11,7 +11,9 @@ export async function configure(aurelia: Aurelia) {
     aurelia
         .use
         .standardConfiguration()
+        .plugin(PLATFORM.moduleName("aurelia-dialog"))
         .feature(PLATFORM.moduleName("converters/index"))
+        .feature(PLATFORM.moduleName("attributes/index"))
         .developmentLogging;
 
     await aurelia.start();
