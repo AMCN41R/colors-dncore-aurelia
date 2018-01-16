@@ -90,7 +90,7 @@ module.exports = {
             "window.jQuery": "jquery"
         }),
         new HtmlWebpackPlugin({
-            template: "index.ejs",
+            template: `${srcDir}/index.ejs`,
             filename: `${outDir}/index.html`
         }),
         extractVendorCss,
