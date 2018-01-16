@@ -15,6 +15,19 @@ export class ColorApi {
             method: "POST"
         })
     }
+
+    async canDeleteColor(id: number): Promise<boolean> {
+        var response = await this.httpClient.fetch(`api/colors/${id}/can-delete`);
+        return await response.json();
+    }
+
+    async deleteColor(id: number): Promise<boolean> {
+        var response = await this.httpClient.fetch(`api/colors/${id}`, {
+            method: "DELETE"
+        });
+
+        return response.ok;
+    }
 }
 
 export interface IColor {

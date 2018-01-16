@@ -1,0 +1,24 @@
+<template>
+    <ux-dialog>
+
+        <ux-header>
+            <div class="modal-header">
+                ${opts.title}
+            </div>
+        </ux-header>
+
+        <ux-body>
+            <div class="modal-body">
+                ${opts.question}
+            </div>
+        </ux-body>
+
+        <ux-footer>
+            <div class="modal-footer">
+                <button class="btn btn-primary" click.delegate="okClicked()">${opts.okButtonText}</button>
+                <button class="btn btn-default" click.delegate="cancelClicked()">${opts.cancelButtonText}</button>
+            </div>
+        </ux-footer>
+
+    </ux-dialog>
+</template>

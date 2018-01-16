@@ -3,6 +3,7 @@ import { Aurelia } from "aurelia-framework";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
+import "../node_modules/toastr/build/toastr.min.css";
 
 import "./main.scss";
 

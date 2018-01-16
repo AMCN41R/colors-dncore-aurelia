@@ -27,12 +27,33 @@ namespace ColorsTest.Controllers
         {
             var canAdd = await this.Colors.CanAdd(name);
 
-            if(!canAdd)
+            if (!canAdd)
             {
                 return this.BadRequest($"Cannot add duplicate color: {name}");
             }
 
             await this.Colors.AddColor(name);
+
+            return this.Ok();
+        }
+
+        [HttpGet("{id}/can-delete")]
+        public async Task<IActionResult> CanDeleteColor(int id)
+        {
+            var canDelete = await this.Colors.CanDelete(id);
+
+            return this.Ok(canDelete);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteColor(int id)
+        {
+            if(!(await this.Colors.CanDelete(id)))
+            {
+                return this.StatusCode(412); // precondition failed
+            }
+
+            await this.Colors.DeleteColor(id);
 
             return this.Ok();
         }
