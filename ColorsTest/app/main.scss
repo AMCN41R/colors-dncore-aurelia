@@ -6,8 +6,8 @@ $gray: #ddd;
 $light-gray: #eee;
 $gray-hover: #f5f5f5;
 
-@import "./people/people";
-@import "./colors/colors";
+@import "./pages/people/people";
+@import "./pages/colors/colors";
 
 .menu-bar {
     background-color: $dark-blue;

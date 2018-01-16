@@ -1,6 +1,6 @@
 import { autoinject } from "aurelia-framework";
-import { PeopleApi, IPerson } from "../../api/people-api";
-import { AppRouter } from "../../app-router";
+import { PeopleApi, IPerson } from "../../../api/people-api";
+import { AppRouter } from "../../../app-router";
 
 @autoinject
 export class List {

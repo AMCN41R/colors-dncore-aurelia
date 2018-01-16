@@ -10,9 +10,9 @@ export class AppRouter {
 
         config.map([
             { route: "/", redirect: "/people" },
-            { route: "/people", name: "people", moduleId: PLATFORM.moduleName("./people/list/list") },
-            { route: "/people/:id", name: "edit-person", moduleId: PLATFORM.moduleName("./people/edit/edit-person") },
-            { route: "/colors", name: "colors", moduleId: PLATFORM.moduleName("./colors/colors-admin") }
+            { route: "/people", name: "people", moduleId: PLATFORM.moduleName("./pages/people/list/list") },
+            { route: "/people/:id", name: "edit-person", moduleId: PLATFORM.moduleName("./pages/people/edit/edit-person") },
+            { route: "/colors", name: "colors", moduleId: PLATFORM.moduleName("./pages/colors/colors-admin") }
         ]);
     }
 

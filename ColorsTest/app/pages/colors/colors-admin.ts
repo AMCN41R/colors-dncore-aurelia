@@ -1,11 +1,11 @@
 import { PLATFORM } from "aurelia-pal";
 import { autoinject, reset } from "aurelia-framework";
 import { DialogService, DialogOpenResult, DialogCancelResult } from "aurelia-dialog";
-import { ColorApi, IColor } from "../api/color-api";
+import { ColorApi, IColor } from "../../api/color-api";
 import { AddColorModal, IAddColorModalOptions } from "./add-color-modal";
-import { ConfirmationModal, IConfirmationModalOptions } from "../modals/confirmation-modal/confirmation-modal";
-import { NotificationModal, INotificationModalOptions, notifyModal } from "../modals/notification-modal/notification-modal";
-import { Notifier } from "../utilities/notifier";
+import { ConfirmationModal, IConfirmationModalOptions } from "../../modals/confirmation-modal/confirmation-modal";
+import { NotificationModal, INotificationModalOptions, notifyModal } from "../../modals/notification-modal/notification-modal";
+import { Notifier } from "../../utilities/notifier";
 
 @autoinject
 export class ColorsAdmin {
