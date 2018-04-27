@@ -25,11 +25,16 @@ namespace ColorsTest.Controllers
         [HttpPost("{name}")]
         public async Task<IActionResult> AddColor(string name)
         {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return this.BadRequest();
+            }
+
             var canAdd = await this.Colors.CanAdd(name);
 
             if (!canAdd)
             {
-                return this.BadRequest($"Cannot add duplicate color: {name}");
+                return this.StatusCode(412, $"Cannot add duplicate color: {name}"); // precondition failed
             }
 
             await this.Colors.AddColor(name);
@@ -48,7 +53,7 @@ namespace ColorsTest.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteColor(int id)
         {
-            if(!(await this.Colors.CanDelete(id)))
+            if (!(await this.Colors.CanDelete(id)))
             {
                 return this.StatusCode(412); // precondition failed
             }

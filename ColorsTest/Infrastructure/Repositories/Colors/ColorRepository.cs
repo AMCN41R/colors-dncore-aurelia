@@ -32,7 +32,7 @@ namespace ColorsTest.Infrastructure.Repositories.Colors
                     new { id }
                 );
 
-                return color.FromEntity();
+                return color.ToModel();
             }
         }
 
@@ -46,7 +46,7 @@ namespace ColorsTest.Infrastructure.Repositories.Colors
                     "SELECT * FROM Colours"
                 );
 
-                return colors.Select(x => x.FromEntity());
+                return colors.Select(x => x.ToModel());
             }
         }
 
@@ -102,7 +102,7 @@ namespace ColorsTest.Infrastructure.Repositories.Colors
                     "
                 );
 
-                return colors.Select(x => x.FromEntity());
+                return colors.Select(x => x.ToModel());
             }
         }
     }

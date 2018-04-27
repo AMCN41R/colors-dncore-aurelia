@@ -57,7 +57,7 @@ namespace ColorsTest.Infrastructure.Repositories.People
                     new { id }
                 );
 
-                var result = person.FromEntity(colors.ToList());
+                var result = person.ToModel(colors.ToList());
 
                 return result;
             }

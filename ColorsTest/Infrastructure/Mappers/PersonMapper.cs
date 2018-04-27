@@ -8,14 +8,14 @@ namespace ColorsTest.Infrastructure.Mappers
 {
     public static class PersonMapper
     {
-        public static Person FromEntity(this PersonEntity entity)
+        public static Person ToModel(this PersonEntity entity)
         {
             Guard.AgainstNullArgument(entity, nameof(entity));
 
-            return entity.FromEntity(new List<Color>());
+            return entity.ToModel(new List<Color>());
         }
 
-        public static Person FromEntity(this PersonEntity entity, IList<Color> colors)
+        public static Person ToModel(this PersonEntity entity, IList<Color> colors)
         {
             Guard.AgainstNullArgument(entity, nameof(entity));
 

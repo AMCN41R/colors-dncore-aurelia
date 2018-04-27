@@ -18,7 +18,7 @@ namespace ColorsTest.Infrastructure.Mappers
             };
         }
 
-        public static Color FromEntity(this ColorEntity color)
+        public static Color ToModel(this ColorEntity color)
         {
             Guard.AgainstNullArgument(color, nameof(color));
 

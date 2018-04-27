@@ -10,21 +10,21 @@ namespace ColorsTest.UnitTests.Infrastructure.Mappers
 {
     public class PersonMapperTests
     {
-        #region FromEntity
+        #region ToModel
 
         [Fact]
-        public void FromEntity_NullEntityAndNoColors_ThrowsArgumentNullException()
+        public void ToModel_NullEntityAndNoColors_ThrowsArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(
-                () => (null as PersonEntity).FromEntity()
+                () => (null as PersonEntity).ToModel()
             );
         }
 
         [Fact]
-        public void FromEntity_NullEntityWithColors_ThrowsArgumentNullException()
+        public void ToModel_NullEntityWithColors_ThrowsArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(
-                () => (null as PersonEntity).FromEntity(new List<Color>())
+                () => (null as PersonEntity).ToModel(new List<Color>())
             );
         }
 
